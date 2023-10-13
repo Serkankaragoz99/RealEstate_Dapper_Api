@@ -84,7 +84,7 @@ namespace RealEstate_Dapper_Api.Repositories.StatisticsRepositories
 
         public string CategoryNameByMaxProductCount()
         {
-            string query = "Select top(1) CategoryName,Count(*) From Product\r\ninner join Category\r\non Product.ProductCategory=Category.CategoryId\r\nGroup By CategoryName order by Count(*) DesC";
+            string query = "Select top(1) CategoryName,Count(*) From Product inner join Category on Product.ProductCategory=Category.CategoryId Group By CategoryName order by Count(*) DesC";
             using (var connection = _context.CreateConnection())
             {
                 var values = connection.QueryFirstOrDefault<string>(query);
