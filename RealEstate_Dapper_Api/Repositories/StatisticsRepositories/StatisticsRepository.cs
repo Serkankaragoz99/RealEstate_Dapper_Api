@@ -44,7 +44,7 @@ namespace RealEstate_Dapper_Api.Repositories.StatisticsRepositories
 
         public decimal AverageProductPriceRent()
         {
-            string query = "Select Avg(ProductPrice)From Product Where Type='Kiralık'";
+            string query = "Select Avg(ProductPrice) From Product Where Type ='Kiralık'";
             using (var connection = _context.CreateConnection())
             {
                 var values = connection.QueryFirstOrDefault<decimal>(query);

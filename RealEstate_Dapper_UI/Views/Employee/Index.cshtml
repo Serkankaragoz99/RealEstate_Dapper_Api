@@ -6,6 +6,7 @@
     int count = 0;
 }
 
+
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
         <div class="col-12">
@@ -31,8 +32,18 @@
                                     <th scope="row">@count</th>
                                     <td>@item.Name</td>
                                     <td>@item.Title</td>
-                                    <td>@item.Status</td>
-                                    <td><a href="/Employee/DeleteEmployee/@item.EmployeeID" class="btn btn-outline-danger">Sil</a></td>
+                                   @* <td>@item.Status</td>*@
+                                   <td> 
+                                       @if(item.Status)
+                                       {
+                                            <span class="btn btn-outline-success">Aktif</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="btn btn-outline-danger">Pasif</span>
+                                        }
+                                    </td>
+                                    <td><a href="/Employee/DeleteEmployee/@item.EmployeeID" class="btn btn-outline-danger Sil">Sil</a></td>
                                     <td><a href="/Employee/UpdateEmployee/@item.EmployeeID" class="btn btn-outline-success">Güncelle</a></td>
                                 </tr>
                             }
@@ -44,4 +55,5 @@
         </div>
     </div>
 </div>
+
 
